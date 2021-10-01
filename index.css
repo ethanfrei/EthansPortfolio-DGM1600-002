@@ -1,26 +1,41 @@
-:root {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 #navbar {
 background-color: #7829da;
-list-style-type: none;
+position: fixed;
+width: 100%;
+
 }
 
 .nav-list{
 display: flex;
 justify-content: flex-end;
-
+list-style-type: none;
+margin-right: 1rem;
 }
 
-/*.nav-list ul {
-    list-style-type: none;
-}*/
-
-
-a {
+.nav-list a {
+    display: block;
     text-decoration: none;
     color: #f0f0f0;
+    padding: 1.5rem;
+    font-size: xx-large;
 }
 
+.nav-list a:hover {
+    background-color: #9a4bfc;
+}
+
+#welcome-section {
+    background-color: #7289da;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
