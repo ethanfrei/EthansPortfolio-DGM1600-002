@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+
+
 html { 
     scroll-behavior: smooth;
 }
@@ -22,8 +24,10 @@ html {
     }
 }
 
+
+
 #navbar {
-background-color: #2A6CAc;
+background-color: #0A1734;
 position: fixed;
 width: 100%;
 
@@ -61,17 +65,21 @@ a {
     align-items: center;
     font-size: 3rem;
     color: white;
-    background-image: linear-gradient(62deg, #0A1734 0%, #181719 100%)
+    background-image: linear-gradient(-180deg, #0A1734 11%, white 100%)
 }
 
 #welcome-section h4 {
-    color: #969696;
+    color: #0A1734;
+}
+body {
+    
 }
 
 #projects {
     margin: 3rem 0;
     display: flex;
     justify-content: center;
+
 }
 
 .projects-grid {
@@ -85,6 +93,10 @@ a {
 .project-tile {
     margin: 2rem;
 }
+
+img {
+    border: 5px solid #0A1734;
+  }
 
 #contact {
     display: flex;
