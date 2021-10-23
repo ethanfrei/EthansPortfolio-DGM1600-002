@@ -52,3 +52,10 @@ let myCar = {
 }
 
 myCar.numDoor = 4;
+
+element => console.log(element) // implicit 'return' when only one line for the function
+element => {
+    let foo = 'bar' + 'baxz'
+    return console.log(element) // explicit 'return' because of multiple lines
+}
+(num1, num2) =>

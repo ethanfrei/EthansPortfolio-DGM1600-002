@@ -1,0 +1,8 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+figure img {
+    width: 200px;
+}
