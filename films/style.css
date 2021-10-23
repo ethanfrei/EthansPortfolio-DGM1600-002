@@ -3,7 +3,21 @@ h1 {
     color: white
 }
 
-main {
+figure {
     background-color: black;
-    color: #ffff;
+}
+figcaption {
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+img {
+    border: 8px solid black;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
