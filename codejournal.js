@@ -58,4 +58,29 @@ element => {
     let foo = 'bar' + 'baxz'
     return console.log(element) // explicit 'return' because of multiple lines
 }
-(num1, num2) =>
+
+// a higher order function is a function that accepts another function as a parameter. 
+// filter, map and reduc e are the most popular, but forEach, every, find, and some are also 
+
+const pilots = [
+    {
+        id: 2,
+        name: "Wedge Antilles",
+        faction: "Rebels"
+    },
+    {
+        id: 8,
+        name: "Ciena Ree",
+        faction: "Empire"
+    },
+    {
+        id: 40,
+        name: "Iden Versio",
+        faction "Empire"
+    },
+];
+
+const rebels = pilots.filter((pilot) => pilot.faction === "Rebels");
+const empire = pilots.filter((pilot) => {
+    return pilot.faction === "Empire"
+})
