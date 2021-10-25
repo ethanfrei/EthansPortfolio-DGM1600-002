@@ -2,7 +2,9 @@ import { people } from '../Data/people.js'
 
 const main = document.querySelector('#main')
 
-console.log(people.length)
+const maleCharacters = people.filter(person => person.gender === 'male')
+console.log(maleCharacters.length)
+const femaleCharacters = people.filter(person => person.gender === 'female')
 
 people.forEach((element) => {
 const personFig = document.createElement('figure')
@@ -16,13 +18,13 @@ personFig.appendChild(personImg)
 personFig.appendChild(personCaption)
 
 main.appendChild(personFig)
-getLastNumber(element.url)
+
 }
 )
 
 
 function getLastNumber(url){
-console.log = url.lastIndexOf('/')
+let end = url.lastIndexOf('/')
 let start = end - 2
 if (url.charAt(start) === '/') {
     start++
