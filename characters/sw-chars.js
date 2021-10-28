@@ -1,5 +1,5 @@
 import { people } from '../Data/people.js'
-import { getLastNumber } from '../utils/index.js'
+import { getLastNumber, removeChildren } from '../utils/index.js'
 
 const main = document.querySelector('#main')
 
@@ -44,6 +44,7 @@ if (
 
 function populateDOM(characters) {
 
+    removeChildren(main)
 while (main.firstChild) {
     main.removeChild(main.firstChild)
 }
