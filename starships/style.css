@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin-left: 2em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    font-size: xx-large;
+}
+
+
+
+.mainContainer {
+    display: flex;
+    
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+}
+
+.nav {
+    margin-left: 2em;
+}
+
+.box {
+    background-color: white;
+    font-size: large;
+    text-align: center;
+    
+}
+
+.shipName {
+    font-size: xx-large
+}
