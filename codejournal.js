@@ -78,9 +78,30 @@ const pilots = [
         name: "Iden Versio",
         faction "Empire"
     },
+    
 ];
 
 const rebels = pilots.filter((pilot) => pilot.faction === "Rebels");
 const empire = pilots.filter((pilot) => {
     return pilot.faction === "Empire"
 })
+
+const pilotName = pilots.map((pilot) => pilot.name).filter(item => item !== undefined)
+
+console.log()
+
+let filmURLs = [
+
+]
+
+{
+    id: 99,
+    name: "Ello Atsy",
+    years: 22
+},
+
+const totalYears = swpilots.reduce((acc, pilot) => acc + pilot.years, 0);
+
+const mostExpPilot = swpilots.reduce((oldest, pilot) => {
+    return (oldest.years 0) > pilot.years ? oldest : pilot;
+}, {};
