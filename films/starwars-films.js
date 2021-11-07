@@ -18,3 +18,5 @@ for (let i = 0; i < films.length; i++) {
 
     filmList.appendChild(figure)
 }
+
+object.style.backgroundImage="url(istockphoto-1148265910-640x640.jpg)"

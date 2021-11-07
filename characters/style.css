@@ -7,7 +7,7 @@ header  {
     display: flex;
     justify-content: space-around;
     padding: 1rem;
-    background-color: black;
+    
 }
 
 button {
@@ -28,5 +28,26 @@ main {
     margin: 8px;
 }
 figure img {
-    width: 200px;
+    width: 150px;
+    margin: .75rem;
+    border-radius: 1rem;
+    
 }
+
+
+body {
+    background-color: black;
+    background-image: url('/images/5732428 (2).jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+figcaption {
+    color: white;
+    margin: .75rem;
+    text-align: center;
+    background-color: rgba(3,3,3, .5);
+
+    font-size: 1.25rem;
+}
+
