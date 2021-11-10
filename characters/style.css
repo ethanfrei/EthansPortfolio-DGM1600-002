@@ -41,13 +41,18 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+img {
+    border: solid;
+    color: gold;
+
+}
 
 figcaption {
     color: white;
     margin: .75rem;
     text-align: center;
-    background-color: rgba(3,3,3, .5);
-
+    background-color: rgb(0, 0, 0);
     font-size: 1.25rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 

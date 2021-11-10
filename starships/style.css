@@ -30,6 +30,8 @@ section {
 
 .nav {
     margin-left: 2em;
+   
+    
 }
 
 .box {
@@ -55,3 +57,17 @@ body div img {
     margin-left: auto;
     margin-right: auto;
     }
+a {
+    font-size: large;
+    color: gold;
+   
+}
+
+a li {
+    background-color: black;
+    padding: .5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ a:hover {
+    color: rgb(46, 46, 46);
+ }
