@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-.senators {
+.Senators {
     display: flex;
     flex-wrap: wrap;
 }
