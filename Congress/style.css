@@ -2,13 +2,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+header {
+    font-family: we;
+    text-align: center;
+    margin: 2rem;
+    font-size: xx-large;
+}
 
 .Senators {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 figure {
     width: 160px;
-    height: 200px;
+    flex-direction: column;
+    display: flex;
+    margin: 1rem;
+    
+}
+figcaption {
+    text-align: center;
 }
