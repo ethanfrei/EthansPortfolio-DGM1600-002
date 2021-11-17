@@ -105,3 +105,4 @@ const totalYears = swpilots.reduce((acc, pilot) => acc + pilot.years, 0);
 const mostExpPilot = swpilots.reduce((oldest, pilot) => {
     return (oldest.years 0) > pilot.years ? oldest : pilot;
 }, {};
+
