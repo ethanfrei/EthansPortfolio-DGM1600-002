@@ -7,6 +7,11 @@ const senatorDiv = document.querySelector('.Senators')
 const seniorityHeading = document.querySelector('.seniority')
 const weaselListOrderedList = document.querySelector('.weaselList')
 
+const modal = document.querySelector('.modal')
+//const senatorDiv = document.querySelector('img').addEventListener('click') trying to make the images clickable for a modal
+
+
+
 function simplifiedMembers(chamberFilter) {
     console.log(chamberFilter)
     const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter :
@@ -42,6 +47,7 @@ figImg.src = senator.imgURL
         senFigure.appendChild(figImg)
         senFigure.appendChild(figCaption)
         senatorDiv.appendChild(senFigure)
+        
     })
 }
 
@@ -80,5 +86,9 @@ const biggestWeasel = simplifiedMembers().reduce((acc, senator) =>
      listItem.textContent = weasel.name
      weaselListOrderedList.appendChild(listItem)
  })
+
+ closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
+modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
+
 
 
