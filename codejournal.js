@@ -106,3 +106,11 @@ const mostExpPilot = swpilots.reduce((oldest, pilot) => {
     return (oldest.years 0) > pilot.years ? oldest : pilot;
 }, {};
 
+
+
+
+
+figImg.addEventListener('click', () => {
+    modal.classList.toggle('is-active')
+    img.src = figImg
+})

@@ -10,6 +10,7 @@ const weaselListOrderedList = document.querySelector('.weaselList')
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const modalBackground = document.querySelector('.modal-background')
+const modalContent = document.querySelector('.modal-content')
 
 
 closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
@@ -45,13 +46,15 @@ function populateSenatorDiv(simpleSenators) {
         let senFigure = document.createElement('figure')
         let figImg = document.createElement('img')
         let figCaption = document.createElement('figcaption')
-        
         figImg.addEventListener('click', () => {
-
             modal.classList.toggle('is-active')
+            img.src = figImg
         })
+        
+        
 
 figImg.src = senator.imgURL
+
 
         figCaption.textContent = senator.name
         senFigure.appendChild(figImg)
@@ -60,6 +63,8 @@ figImg.src = senator.imgURL
         
     })
 }
+
+
 
 //const filterSenators = (prop, value) => simplifiedSenators().filter(senator => senator[prop] === value)
 
