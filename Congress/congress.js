@@ -10,7 +10,8 @@ const weaselListOrderedList = document.querySelector('.weaselList')
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const modalBackground = document.querySelector('.modal-background')
-const modalContent = document.querySelector('.modal-content')
+const modalContent = document.querySelector('.image')
+
 
 
 closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
@@ -48,7 +49,7 @@ function populateSenatorDiv(simpleSenators) {
         let figCaption = document.createElement('figcaption')
         figImg.addEventListener('click', () => {
             modal.classList.toggle('is-active')
-            document.getElementById(`https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`)
+           
         })
         
         
