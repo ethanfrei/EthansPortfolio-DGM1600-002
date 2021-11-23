@@ -10,7 +10,7 @@ const weaselListOrderedList = document.querySelector('.weaselList')
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const modalBackground = document.querySelector('.modal-background')
-const modalContent = document.querySelector('.image')
+const modalContent = document.querySelector('#image')
 
 
 
@@ -46,6 +46,7 @@ function populateSenatorDiv(simpleSenators) {
     simpleSenators.forEach(senator => {
         let senFigure = document.createElement('figure')
         let figImg = document.createElement('img')
+        figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
         let figCaption = document.createElement('figcaption')
         figImg.addEventListener('click', () => {
             modal.classList.toggle('is-active')
