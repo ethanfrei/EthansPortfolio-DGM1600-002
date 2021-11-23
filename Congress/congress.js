@@ -8,8 +8,12 @@ const seniorityHeading = document.querySelector('.seniority')
 const weaselListOrderedList = document.querySelector('.weaselList')
 
 const modal = document.querySelector('.modal')
-//const senatorDiv = document.querySelector('img').addEventListener('click') trying to make the images clickable for a modal
+const closeButton = document.querySelector('.modal-close')
+const modalBackground = document.querySelector('.modal-background')
 
+
+closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
+modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
 
 
 function simplifiedMembers(chamberFilter) {
@@ -23,6 +27,8 @@ function simplifiedMembers(chamberFilter) {
             name: `${senator.first_name}${middleName}${senator.last_name}`,
             party: senator.party,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
+            
+
             gender: senator.gender,
             seniority: +senator.seniority,
             missedVotesPct: senator.missed_votes_pct,
@@ -32,7 +38,6 @@ function simplifiedMembers(chamberFilter) {
 }
 
 
-
 populateSenatorDiv(simplifiedMembers('Rep.'))
 
 function populateSenatorDiv(simpleSenators) {
@@ -40,6 +45,11 @@ function populateSenatorDiv(simpleSenators) {
         let senFigure = document.createElement('figure')
         let figImg = document.createElement('img')
         let figCaption = document.createElement('figcaption')
+        
+        figImg.addEventListener('click', () => {
+
+            modal.classList.toggle('is-active')
+        })
 
 figImg.src = senator.imgURL
 
