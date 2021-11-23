@@ -48,7 +48,7 @@ function populateSenatorDiv(simpleSenators) {
         let figCaption = document.createElement('figcaption')
         figImg.addEventListener('click', () => {
             modal.classList.toggle('is-active')
-            img.src = figImg
+            document.getElementById(`https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`)
         })
         
         
