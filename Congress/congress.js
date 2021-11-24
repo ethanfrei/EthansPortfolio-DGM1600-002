@@ -1,5 +1,7 @@
 import { senators } from '../Data/senators.js'
 import { representatives } from '../Data/representatives.js'
+import { getLastNumber } from '../utils/index.js'
+
 
 const members = [...senators, ...representatives] // combining arrays, yo
 
@@ -7,15 +9,27 @@ const senatorDiv = document.querySelector('.Senators')
 const seniorityHeading = document.querySelector('.seniority')
 const weaselListOrderedList = document.querySelector('.weaselList')
 
+
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const modalBackground = document.querySelector('.modal-background')
 const modalContent = document.querySelector('#image')
 
+const main = document.querySelector('#main')
+const mainHeader = document.createElement('header')
+document.body.insertBefore(mainHeader, main)
+
+
+
+//add buttons here...?
+
+
 
 
 closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
 modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
+
+
 
 
 function simplifiedMembers(chamberFilter) {
@@ -39,6 +53,9 @@ function simplifiedMembers(chamberFilter) {
     })
 }
 
+const republicanSenators = senators.filter(senators => senators.party === 'R')
+const democratSenators = senators.filter(senators => senators.party === 'D')
+
 
 populateSenatorDiv(simplifiedMembers('Rep.'))
 
@@ -48,10 +65,13 @@ function populateSenatorDiv(simpleSenators) {
         let figImg = document.createElement('img')
         figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
         let figCaption = document.createElement('figcaption')
-        figImg.addEventListener('click', () => {
+        figImg.addEventListener('click', (event) => {
             modal.classList.toggle('is-active')
+            modalContent.src = event.target.src
            
         })
+
+        
         
         
 
@@ -65,6 +85,7 @@ figImg.src = senator.imgURL
         
     })
 }
+
 
 
 
@@ -106,6 +127,5 @@ const biggestWeasel = simplifiedMembers().reduce((acc, senator) =>
 
  closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
 modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
-
 
 

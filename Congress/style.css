@@ -2,37 +2,24 @@
     margin: 0;
     box-sizing: border-box;
 }
-#navbar {
-    background-color: #0A1734;
-    width: 100%;
-    
-    }
-    
-    .nav-list{
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-    margin-right: 5rem;
-    }
-    
-    .nav-list a {
-        display: block;
-        text-decoration: none;
-        color: #f0f0f0;
-        padding: 1.5rem;
-        font-size: xx-large;
-    }
-    
-    .nav-list a:hover {
-        background-color: #99241F;
-    }
 
 header {
-    font-family: garamond;
-    text-align: center;
-    
-    font-size: xx-large;
     color: white;
+    font-family: garamond;
+    font-size: xx-large;
+    text-align: center;
+    background-color: #0A1734;
+    padding: .5rem;
+}
+
+header img {
+    width: 800px;
+}
+
+
+
+button {
+    font-size: xx-large;
     background-color: #99241F;
 }
 
@@ -57,10 +44,11 @@ figcaption {
     background-color: black;
 }
 figure img {
-    border-radius: 1rem;
+    
     border: solid;
     border-color: red;
 }
+
 html {
 background-image: url('/images/flag.jpg');
 background-repeat: repeat;
@@ -78,4 +66,9 @@ background-size: contain;
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
+  }
+
+  .modal img {
+      width: 300px;
   }

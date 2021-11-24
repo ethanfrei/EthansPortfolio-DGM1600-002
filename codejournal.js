@@ -114,3 +114,110 @@ figImg.addEventListener('click', () => {
     modal.classList.toggle('is-active')
     img.src = figImg
 })
+
+<nav id="navbar">
+        <ul class="nav-list" style="font-family: garamond">
+            <li>
+                <a href="#welcome-section">Republicans</a>
+            </li>
+            <li>
+                <a href="#projects">Democrats</a>
+            </li>
+            <li>
+                <a href="#contact">Senators</a>
+            </li>
+            <li>
+                <a href="#contact">Representatives</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    #navbar {
+        background-color: #0A1734;
+        width: 100%;
+        
+        }
+        
+        .nav-list{
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin-right: 5rem;
+        }
+        
+        .nav-list a {
+            display: block;
+            text-decoration: none;
+            color: #f0f0f0;
+            padding: 1.5rem;
+            font-size: xx-large;
+        }
+        
+        .nav-list a:hover {
+            background-color: #99241F;
+        }//
+    
+    header {
+        font-family: garamond;
+        text-align: center;
+        
+        font-size: xx-large;
+        color: white;
+        background-color: #99241F;
+    }
+
+
+    republicanButton.forEach((element) => {
+        const personFig = document.createElement('figure')
+        const personImg = document.createElement('img')
+        let senNum = getLastNumber(element.url)
+        figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
+        const personCaption = document.createElement('figcaption')
+        personCaption.textContent = element.name
+    
+        personFig.appendChild(personImg)
+        personFig.appendChild(personFig)
+    
+        main.appendChild(personFig)
+    })
+
+
+    function populateSenatorDiv(simpleSenators) {
+        simpleSenators.forEach(senator => {
+            let senFigure = document.createElement('figure')
+            let figImg = document.createElement('img')
+            figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
+            let figCaption = document.createElement('figcaption')
+            figImg.addEventListener('click', (event) => {
+                modal.classList.toggle('is-active')
+                modalContent.src = event.target.src
+               
+            })
+
+            //buttons
+            const republicanButton = document.createElement('button')
+republicanButton.textContent = 'Republicans'
+
+republicanButton.addEventListener('click', () => populateDOM(republicanSenators))
+
+mainHeader.appendChild(republicanButton)
+
+const democratButton = document.createElement('button')
+democratButton.textContent = 'Democrats'
+mainHeader.appendChild(democratButton)
+
+const senatorsButton = document.createElement('button')
+senatorsButton.textContent = 'Senators'
+mainHeader.appendChild(senatorsButton)
+
+const representativesButton = document.createElement('button')
+representativesButton.textContent = 'Senators'
+mainHeader.appendChild(representativesButton)
+
+const allButton = document.createElement('button')
+allButton.textContent = 'All Senators'
+allButton.addEventListener('click', () => populateDOM(people))
+mainHeader.appendChild(allButton)
+
+//
