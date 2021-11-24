@@ -83,12 +83,15 @@ a {
     display: flex;
     flex-wrap: wrap;
     width: 1280px;
-    justify-content: center;
+    justify-content:space-between;
 
 }
 
 .project-tile {
     margin: 2rem;
+    text-align: center;
+    font-family: eurostile;
+    
 }
 
 img {
