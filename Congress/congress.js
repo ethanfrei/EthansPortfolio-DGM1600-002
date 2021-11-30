@@ -21,13 +21,45 @@ document.body.insertBefore(mainHeader, main)
 
 
 
+
+
 //add buttons here...?
+//const republicansButton = document.createElement('button')
+//republicansButton.textContent = 'Republicans Reps.'
+
+//mainHeader.appendChild(republicansButton)
+
+//const representativesButton = document.createElement('button')
+//representativesButton.textContent = 'Democrat Reps.'
+//mainHeader.appendChild(representativesButton)
+
+//const senatorsButton = document.createElement('button')
+//senatorsButton.textContent = 'Republican Senators'
+
+//senatorsButton.addEventListener('click', () => populateDOM(republicans))
+
+//mainHeader.appendChild(senatorsButton)
+
+//const democratsButton = document.createElement('button')
+//democratsButton.textContent = 'Democrats Senators'
+//mainHeader.appendChild(democratsButton)
 
 
 
 
-closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
-modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
+
+
+
+
+
+
+//const republicans = senators.filter(person => person.party === 'R')
+
+//const democrats = senators.filter(person => person.party === 'D')
+
+//const republicanRepresentatives = representatives.filter(person => person.party === 'R')
+
+//const democratRepresentatives = representatives.filter(person => person.party === 'D')
 
 
 
@@ -43,8 +75,6 @@ function simplifiedMembers(chamberFilter) {
             name: `${senator.first_name}${middleName}${senator.last_name}`,
             party: senator.party,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
-            
-
             gender: senator.gender,
             seniority: +senator.seniority,
             missedVotesPct: senator.missed_votes_pct,
@@ -53,18 +83,19 @@ function simplifiedMembers(chamberFilter) {
     })
 }
 
-const republicanSenators = senators.filter(senators => senators.party === 'R')
-const democratSenators = senators.filter(senators => senators.party === 'D')
 
 
-populateSenatorDiv(simplifiedMembers('Rep.'))
 
-function populateSenatorDiv(simpleSenators) {
+
+
+populateDOM(simplifiedMembers('Rep.'))
+
+function populateDOM(simpleSenators) {
+
     simpleSenators.forEach(senator => {
-        let senFigure = document.createElement('figure')
-        let figImg = document.createElement('img')
-        figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
-        let figCaption = document.createElement('figcaption')
+        const senFigure = document.createElement('figure')
+        const figImg = document.createElement('img')
+        const figCaption = document.createElement('figcaption')
         figImg.addEventListener('click', (event) => {
             modal.classList.toggle('is-active')
             modalContent.src = event.target.src
@@ -86,6 +117,9 @@ figImg.src = senator.imgURL
     })
 }
 
+
+closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
+modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
 
 
 

@@ -168,56 +168,19 @@ figImg.addEventListener('click', () => {
     }
 
 
-    republicanButton.forEach((element) => {
-        const personFig = document.createElement('figure')
-        const personImg = document.createElement('img')
-        let senNum = getLastNumber(element.url)
-        figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
-        const personCaption = document.createElement('figcaption')
-        personCaption.textContent = element.name
     
-        personFig.appendChild(personImg)
-        personFig.appendChild(personFig)
-    
-        main.appendChild(personFig)
-    })
-
-
-    function populateSenatorDiv(simpleSenators) {
-        simpleSenators.forEach(senator => {
-            let senFigure = document.createElement('figure')
-            let figImg = document.createElement('img')
-            figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
-            let figCaption = document.createElement('figcaption')
-            figImg.addEventListener('click', (event) => {
-                modal.classList.toggle('is-active')
-                modalContent.src = event.target.src
-               
-            })
-
-            //buttons
-            const republicanButton = document.createElement('button')
-republicanButton.textContent = 'Republicans'
-
-republicanButton.addEventListener('click', () => populateDOM(republicanSenators))
-
-mainHeader.appendChild(republicanButton)
-
-const democratButton = document.createElement('button')
-democratButton.textContent = 'Democrats'
-mainHeader.appendChild(democratButton)
-
-const senatorsButton = document.createElement('button')
-senatorsButton.textContent = 'Senators'
-mainHeader.appendChild(senatorsButton)
-
-const representativesButton = document.createElement('button')
-representativesButton.textContent = 'Senators'
-mainHeader.appendChild(representativesButton)
-
-const allButton = document.createElement('button')
-allButton.textContent = 'All Senators'
-allButton.addEventListener('click', () => populateDOM(people))
-mainHeader.appendChild(allButton)
 
 //
+
+function populateSenatorDiv(simpleSenators) {
+
+    simpleSenators.forEach(senator => {
+        let senFigure = document.createElement('figure')
+        let figImg = document.createElement('img')
+        figImg.src = `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`
+        let figCaption = document.createElement('figcaption')
+        figImg.addEventListener('click', (event) => {
+            modal.classList.toggle('is-active')
+            modalContent.src = event.target.src
+           
+        })
