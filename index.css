@@ -97,6 +97,14 @@ a {
 img {
     border: 5px solid #0A1734;
   }
+  figcaption {
+      background-color: #0A1734;
+      position: relative;
+      padding: .75rem;
+      color: white;
+      top: -4px;
+
+  }
 
 #contact {
     display: flex;
