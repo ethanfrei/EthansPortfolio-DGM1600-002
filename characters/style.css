@@ -35,12 +35,7 @@ figure img {
 }
 
 
-body {
-    background-color: black;
-    background-image: url('/images/5732428 (2).jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 img {
     border: solid;
     color: gold;
@@ -55,4 +50,11 @@ figcaption {
     font-size: 1.25rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+body {
+    background-color: white;
+    background-repeat: repeat;
+    background-image: url("/images/stars.jpg");
+    
+  }
 

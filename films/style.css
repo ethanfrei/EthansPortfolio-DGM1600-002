@@ -1,40 +1,61 @@
-h1 {
-    font-size: xx-large;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: black;
-    text-align: center;
-    background-color: gold;
+.nav-list {
+  display: flex;
+  justify-content: center;
 }
 
-body div img {
-max-width: 25%;
-margin: 3rem;
-display: block;
-margin-left: auto;
-margin-right: auto;
+@font-face {
+    src: url(/fonts/SerifGothicStd-ExtraBold.otf);
+    font-family: Star Wars;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+.nav-list a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 1.5rem;
+  font-size: xx-large;
+  font-family: Star Wars;
+  margin-bottom: 1rem;
+  
+  
+}
+
+.nav-list a:hover {
+    color: gold;
 }
 
 
-figure {
-    background-color: rgb(177, 177, 177);
+
+ div img {
+  max-width: 25%;
+  margin: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
+
 figcaption {
-    color: white;
-    text-align: center;
-    font-size: xx-large;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  color: white;
+  text-align: center;
+  font-size: xx-large;
+  font-family: Star Wars;
 }
-
-
 
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 body {
-    background-color: black;
-    background-image: url('/images/5732428 (2).jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: white;
+  background-repeat: repeat;
+  
+  background-image: url("/images/stars.jpg");
+  
 }
