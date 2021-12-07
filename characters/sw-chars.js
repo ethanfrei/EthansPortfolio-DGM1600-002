@@ -48,6 +48,8 @@ function populateDOM(characters) {
 while (main.firstChild) {
     main.removeChild(main.firstChild)
 }
+console.log(populateDOM)
+
 
 characters.forEach((element) => {
 const personFig = document.createElement('figure')

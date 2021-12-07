@@ -1,14 +1,12 @@
 import { senators } from '../Data/senators.js'
 import { representatives } from '../Data/representatives.js'
-import { getLastNumber } from '../utils/index.js'
+import { removeChildren } from '../utils/index.js'
+
 
 
 const members = [...senators, ...representatives] // combining arrays, yo
 
 const senatorDiv = document.querySelector('.Senators')
-const seniorityHeading = document.querySelector('.seniority')
-const weaselListOrderedList = document.querySelector('.weaselList')
-
 
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
@@ -21,50 +19,38 @@ document.body.insertBefore(mainHeader, main)
 
 
 
+const allButton = document.createElement('button')
+allButton.textContent = 'All Congress'
+allButton.addEventListener('click', () => {
+    populateDOM(simplifiedMembers ()) 
+})
 
+mainHeader.appendChild(allButton)
 
-//add buttons here...?
-//const republicansButton = document.createElement('button')
-//republicansButton.textContent = 'Republicans Reps.'
+const senatorsButton = document.createElement('button')
+senatorsButton.textContent = 'Republican'
 
-//mainHeader.appendChild(republicansButton)
+senatorsButton.addEventListener('click', () => {
+    populateDOM(filterSimplifiedMembers (simplifiedMembers (), "R"))
+})
 
-//const representativesButton = document.createElement('button')
-//representativesButton.textContent = 'Democrat Reps.'
-//mainHeader.appendChild(representativesButton)
+mainHeader.appendChild(senatorsButton)
 
-//const senatorsButton = document.createElement('button')
-//senatorsButton.textContent = 'Republican Senators'
+const democratsButton = document.createElement('button')
+democratsButton.textContent = 'Democrats'
+democratsButton.addEventListener('click', () => {
+    populateDOM(filterSimplifiedMembers (simplifiedMembers (), "D"))
+    console.log("click")
+})
 
-//senatorsButton.addEventListener('click', () => populateDOM(republicans))
-
-//mainHeader.appendChild(senatorsButton)
-
-//const democratsButton = document.createElement('button')
-//democratsButton.textContent = 'Democrats Senators'
-//mainHeader.appendChild(democratsButton)
-
-
-
-
-
-
-
-
-
-
-//const republicans = senators.filter(person => person.party === 'R')
-
-//const democrats = senators.filter(person => person.party === 'D')
-
-//const republicanRepresentatives = representatives.filter(person => person.party === 'R')
-
-//const democratRepresentatives = representatives.filter(person => person.party === 'D')
+mainHeader.appendChild(democratsButton)
 
 
 
 
 function simplifiedMembers(chamberFilter) {
+
+    
     console.log(chamberFilter)
     const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter :
         member)
@@ -88,22 +74,36 @@ function simplifiedMembers(chamberFilter) {
 
 
 
-populateDOM(simplifiedMembers('Rep.'))
+//populateDOM(filterSimplifiedMembers (simplifiedMembers (), "D"))
+console.log(members)
+
+function filterSimplifiedMembers(simpleSenators, memberFilter) {
+    
+    const filteredArray = simpleSenators.filter(member => member.party === memberFilter)
+    return filteredArray 
+}
+console.log(filterSimplifiedMembers (simplifiedMembers (), "D"))
+
+
+
 
 function populateDOM(simpleSenators) {
 
+    
+
     simpleSenators.forEach(senator => {
+        
         const senFigure = document.createElement('figure')
         const figImg = document.createElement('img')
         const figCaption = document.createElement('figcaption')
         figImg.addEventListener('click', (event) => {
             modal.classList.toggle('is-active')
             modalContent.src = event.target.src
+
+            
            
         })
 
-        
-        
         
 
 figImg.src = senator.imgURL
@@ -146,20 +146,20 @@ const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
 
 
 
-const biggestWeasel = simplifiedMembers().reduce((acc, senator) =>
- (acc.missedVotesPct || 0) > senator.missedVotesPct ? acc : senator.missedVotesPct, {})
+// const biggestWeasel = simplifiedMembers().reduce((acc, senator) =>
+//  (acc.missedVotesPct || 0) > senator.missedVotesPct ? acc : senator.missedVotesPct, {})
 
- const biggestWeasels = simplifiedMembers().filter(senator => senator.missedVotesPct >= 50)
+//  const biggestWeasels = simplifiedMembers().filter(senator => senator.missedVotesPct >= 50)
 
- console.log(biggestWeasels)
+//  console.log(biggestWeasels)
 
- biggestWeasels.forEach(weasel => {
-     let listItem = document.createElement('li')
-     listItem.textContent = weasel.name
-     weaselListOrderedList.appendChild(listItem)
- })
+//  biggestWeasels.forEach(weasel => {
+//      let listItem = document.createElement('li')
+//      listItem.textContent = weasel.name
+//      weaselListOrderedList.appendChild(listItem)
+//  })
 
- closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
-modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
+//  closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
+// modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
 
 
