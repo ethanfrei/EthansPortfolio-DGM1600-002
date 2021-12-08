@@ -3,6 +3,46 @@
     box-sizing: border-box;
 }
 
+.nav-list {
+    display: flex;
+    justify-content: center;
+    
+    
+  }
+
+  
+  @font-face {
+      src: url(/fonts/PocketMonk-15ze.ttf);
+      font-family: Pokemon;
+  }
+  
+  .nav-list {
+      list-style-type: none;
+  }
+  .nav-list a {
+    display: block;
+    text-decoration: none;
+    color: #3B5EA8;
+    padding: 1.5rem;
+    font-size: xx-large;
+    font-family: Pokemon;
+    margin-bottom: 1rem;
+    
+    
+  }
+  
+  .nav-list a:hover {
+      color: #FFCC04;
+  }
+
+  button {
+      color: blue;
+      font-family: Pokemon;
+      margin: 1rem;
+      padding: .5rem;
+      
+  }
+
 header {
     display: flex;
     justify-content: center;

@@ -101,11 +101,14 @@ function populateCardFront(pokemon) {
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
 
   const pokeCaption = document.createElement("figcaption");
+
+  console.log(pokemon.name[0])
+
   pokeCaption.textContent = pokemon.name;
   pokeFront.appendChild(pokeImg);
   pokeFront.appendChild(pokeCaption);
 
-  //typesBackground(pokemon, pokeFront);
+  typesBackground(pokemon, pokeFront);
   return pokeFront;
 }
 
@@ -113,11 +116,15 @@ function typesBackground(pokemon, card) {
   let pokeType1 = pokemon.types[0].type.name;
   let pokeType2 = pokemon.types[1]?.type.name;
   console.log(pokeType1, pokeType2)
-  card.style.setProperty(
-    "background",
-    `linear-gradient(${getPokeTypeColor(pokeType1)}, #ffffff 
-    })`,
-  );
+  if(!pokeType2) {
+    card.style.setProperty('background' , getPokeTypeColor(pokeType1))
+  } else {
+    card.style.setProperty(
+      "background",
+      `linear-gradient(${getPokeTypeColor(pokeType1)}, ${getPokeTypeColor(pokeType2)})`,
+    );
+  }
+  
 }
 
 function getPokeTypeColor(pokeType) {
@@ -162,6 +169,7 @@ function getPokeTypeColor(pokeType) {
     default:
       color = "#888888";
   }
+  return color
 }
 
 function populateCardBack(pokemon) {
@@ -176,7 +184,13 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
   });
-
+const typesList = document.createElement('ol')
+pokemon.types.forEach((pokeType) => {
+  let typesItem = document.createElement('li')
+  typesItem.textContent = pokeType.type.name
+  typesList.appendChild(typesItem)
+})
   pokeBack.appendChild(abilityList);
+  pokeBack.appendChild(typesList)
   return pokeBack;
 }
