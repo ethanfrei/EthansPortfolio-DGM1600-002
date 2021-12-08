@@ -21,6 +21,8 @@ function loadPokemon(offset = 0, limit = 25) {
   });
 }
 
+loadPokemon(1, 50)
+
 const pokeGrid = document.querySelector(".pokeGrid");
 const loadButton = document.querySelector(".loadPokemon");
 
@@ -28,6 +30,32 @@ loadButton.addEventListener("click", () => {
   removeChildren(pokeGrid);
   loadPokemon(100, 5);
 });
+
+// const allPokemon = []
+
+// const fireButton = document.querySelector('.Fire')
+// fireButton.addEventListener('click', () =>{
+//   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0`)
+//   .then(async (data) => {
+//     for (const pokemon of data.results) {
+//       await getAPIData(pokemon.url).then((pokeData) => {
+//         const mappedPokemon =  {
+// abilities: pokeData.abilities,
+// height: pokeData.height,
+// id: pokeData.id,
+// name: pokeData.name,
+// types: pokeData.types,
+// weight: pokeData.wdight
+//         }
+//         allPokemon.push(mappedPokemon)
+//       })
+//     }
+//     console.log(allPokemon)
+
+//   })
+// })
+
+
 
 const moreButton = document.querySelector(".morePokemon");
 moreButton.addEventListener("click", () => {
@@ -44,11 +72,13 @@ newButton.addEventListener("click", () => {
   let pokeAbilities = prompt(
     "Pokemon Abilities (please use a comma separated list):"
   );
+  let pokeTypes = prompt("What are your Pokemon's types? (up to two types separated by a space)")
   let newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
-    getAbilitiesArray(pokeAbilities)
+    getAbilitiesArray(pokeAbilities),
+    getTypesArray(pokeTypes)
   );
 
   populatePokeCard(newPokemon);
@@ -65,13 +95,25 @@ function getAbilitiesArray(commaString) {
   });
 }
 
+function getTypesArray(spacedString) {
+  let tempArray = spacedString.split(' ')
+  return tempArray.map((typeName) => {
+    return {
+      type: {
+        name: typeName
+      }
+    }
+  })
+}
+
 class Pokemon {
-  constructor(name, height, weight, abilities) {
+  constructor(name, height, weight, abilities, types) {
     (this.id = 100),
       (this.name = name),
       (this.height = height),
       (this.weight = weight);
     this.abilities = abilities;
+    this.types = types
   }
 }
 
@@ -94,22 +136,19 @@ function populatePokeCard(singlePokemon) {
 }
 
 function populateCardFront(pokemon) {
-  const pokeFront = document.createElement("figure");
-  pokeFront.className = "cardFace front";
+  const pokeFront = document.createElement("figure")
+  pokeFront.className = 'cardFace front'
 
-  const pokeImg = document.createElement("img");
-  pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+  const pokeImg = document.createElement("img")
+  pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
 
-  const pokeCaption = document.createElement("figcaption");
+  const pokeCaption = document.createElement("figcaption")
+  pokeCaption.textContent = pokemon.name
+  pokeFront.appendChild(pokeImg)
+  pokeFront.appendChild(pokeCaption)
 
-  console.log(pokemon.name[0])
-
-  pokeCaption.textContent = pokemon.name;
-  pokeFront.appendChild(pokeImg);
-  pokeFront.appendChild(pokeCaption);
-
-  typesBackground(pokemon, pokeFront);
-  return pokeFront;
+  typesBackground(pokemon, pokeFront)
+  return pokeFront
 }
 
 function typesBackground(pokemon, card) {

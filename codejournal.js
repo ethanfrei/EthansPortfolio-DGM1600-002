@@ -184,3 +184,6 @@ function populateSenatorDiv(simpleSenators) {
             modalContent.src = event.target.src
            
         })
+
+
+//pokeCaption.textContent = `${pokemon.name[0].toUpperCase()}${pokemon.name.slice(1)}`

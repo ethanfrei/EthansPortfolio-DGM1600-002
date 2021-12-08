@@ -107,3 +107,8 @@ img {
 figure img {
     width: 200px;
 }
+
+figcaption {
+    text-transform: uppercase;
+    text-align: center;
+}
