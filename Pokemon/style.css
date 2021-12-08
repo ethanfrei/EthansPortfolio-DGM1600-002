@@ -53,25 +53,27 @@ img {
     margin-right: auto;
     margin-left: auto;
     display: block;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    
 }
-
-
-
-
 
 
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    
+    
+    
 }
 
 .scene {
     width: 200px;
     height: 260px;
     margin: .5rem;
+    
     perspective:
+    
 }
 
 .card {
@@ -89,6 +91,8 @@ img {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    
+    
 }
 
 .card.is-flipped {
@@ -106,9 +110,14 @@ img {
 
 figure img {
     width: 200px;
+    
 }
 
 figcaption {
-    text-transform: uppercase;
+    text-transform: capitalize;
+    
+    font-size: 130%;
+    
     text-align: center;
+    font-family: Pokemon;
 }
