@@ -8,15 +8,28 @@ function getAPIData(url) {
   }
 }
 
-function loadPokemon(offset = 0, limit = 25) {
+function loadPokemon(offset = 0, limit = 25, filterType) {
   getAPIData(
     `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
   ).then(async (data) => {
     console.log(data);
     for (const pokemon of data.results) {
-      await getAPIData(pokemon.url).then((pokeData) =>
-        populatePokeCard(pokeData)
-      );
+      await getAPIData(pokemon.url).then((pokeData) => {
+        if(filterType ===  undefined) {
+          populatePokeCard(pokeData)
+        }
+        else {
+          pokeData.types.forEach((pokeType) => {
+            if(pokeType.type.name == filterType){
+              populatePokeCard(pokeData)
+              
+            }
+            
+          })
+          
+        }
+        
+      });
     }
   });
 }
@@ -24,12 +37,75 @@ function loadPokemon(offset = 0, limit = 25) {
 loadPokemon(1, 50)
 
 const pokeGrid = document.querySelector(".pokeGrid");
-const loadButton = document.querySelector(".loadPokemon");
 
+
+const fireButton = document.querySelector('.Fire')
+fireButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 50, "fire")
+})
+
+
+const waterButton = document.querySelector('.Water')
+waterButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 50, "water")
+})
+
+const grassButton = document.querySelector('.Grass')
+grassButton.addEventListener('click', () => {
+
+})
+const normalButton = document.querySelector('.Normal')
+normalButton.addEventListener('click', () => {
+
+})
+const electricButton = document.querySelector('.Electric')
+electricButton.addEventListener('click', () => {
+
+})
+const bugButton = document.querySelector('.Bug')
+bugButton.addEventListener('click', () => {
+
+})
+
+const psychicButton = document.querySelector('.Psychic')
+psychicButton.addEventListener('click', () => {
+  
+})
+
+
+
+const loadButton = document.querySelector(".loadPokemon");
 loadButton.addEventListener("click", () => {
   removeChildren(pokeGrid);
   loadPokemon(100, 5);
 });
+
+// function getTypesList() {
+//   var typesList = []
+//   for(var i= 0; i < pokemon.length; j++) {
+//     for(var j = 0; j < pokemon[i].types.length; j++){
+//       var type = pokemon[i].types[j]
+//       if(typesList.indexOf(type) === -1) {
+//         typesList.push(type)
+//       }
+//     }
+//   }
+//   typesList.sort()
+//   return typesList
+// }
+// console.log(getTypesList )
+
+
+
+//  function filterPokeType (singlePokemon, pokeFilter) {
+//    const filteredArray = singlePokemon.filter(pokemon => pokemon.type === pokeFilter)
+//    return filteredArray
+//  }
+//  console.log(filterPokeType (getTypesArray (), "electric"))
+
+
 
 // const allPokemon = []
 

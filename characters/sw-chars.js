@@ -4,7 +4,23 @@ import { getLastNumber, removeChildren } from '../utils/index.js'
 const main = document.querySelector('#main')
 
 const mainHeader = document.createElement('header')
+const modal = document.querySelector('.modal')
+const closeButton = document.querySelector('.modal-close')
+const modalBackground = document.querySelector('.modal-background')
+const modalContent = document.querySelector('#Image')
+
+closeButton.addEventListener('click', () => {
+    modal.classList.toggle('is-active')
+})
+
+modalBackground.addEventListener('click', () => {
+    modal.classList.toggle('is-active')
+})
+
 document.body.insertBefore(mainHeader, main)
+
+
+
 
 const allButton = document.createElement('button')
 allButton.textContent = 'All Characters'
@@ -56,6 +72,12 @@ const personFig = document.createElement('figure')
 const personImg = document.createElement('img')
 let charNum = getLastNumber(element.url)
 personImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
+
+personImg.addEventListener('click', (event) => {
+    modal.classList.toggle('is-active')
+    modalContent.src = event.target.src
+})
+
 const personCaption = document.createElement('figcaption')
 personCaption.textContent = element.name
 
@@ -67,5 +89,7 @@ main.appendChild(personFig)
 }
 )
 }
+
+
 
 

@@ -4,7 +4,7 @@ import { removeChildren } from '../utils/index.js'
 
 
 
-const members = [...senators, ...representatives] // combining arrays, yo
+const members = [...senators, ...representatives] // combining arrays
 
 const senatorDiv = document.querySelector('.Senators')
 
@@ -99,8 +99,6 @@ function populateDOM(simpleSenators) {
         figImg.addEventListener('click', (event) => {
             modal.classList.toggle('is-active')
             modalContent.src = event.target.src
-
-            
            
         })
 
@@ -116,6 +114,8 @@ figImg.src = senator.imgURL
         
     })
 }
+
+
 
 
 closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
