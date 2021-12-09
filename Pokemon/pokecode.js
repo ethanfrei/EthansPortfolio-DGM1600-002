@@ -42,35 +42,58 @@ const pokeGrid = document.querySelector(".pokeGrid");
 const fireButton = document.querySelector('.Fire')
 fireButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "fire")
+  loadPokemon(1, 300, "fire")
 })
 
 
 const waterButton = document.querySelector('.Water')
 waterButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "water")
+  loadPokemon(1, 300, "water")
 })
 
 const grassButton = document.querySelector('.Grass')
 grassButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 300, "grass")
 
 })
 const normalButton = document.querySelector('.Normal')
 normalButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 300, "normal")
 
 })
 const electricButton = document.querySelector('.Electric')
 electricButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 300, "electric")
 
 })
 const bugButton = document.querySelector('.Bug')
 bugButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 300, "bug")
 
 })
 
 const psychicButton = document.querySelector('.Psychic')
 psychicButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 300, "psychic")
+  
+})
+const flyingButton = document.querySelector('.Flying')
+flyingButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 300, "flying")
+  
+})
+
+const poisonButton = document.querySelector('.Poison')
+poisonButton.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  loadPokemon(1, 300, "poison")
   
 })
 
@@ -79,8 +102,23 @@ psychicButton.addEventListener('click', () => {
 const loadButton = document.querySelector(".loadPokemon");
 loadButton.addEventListener("click", () => {
   removeChildren(pokeGrid);
-  loadPokemon(100, 5);
+  loadPokemon(1, 300);
 });
+
+// const searchBar = document.forms['search-pokemon'].querySelector('input');
+// searchBar.addEventListener('keyup', function(e){
+//   const term = e.target.value.toLowerCase();
+//   const books = pokeGrid.getElementsByTagName('li');
+//   Array.from(books).forEach(function(book){
+// const title = book.firstElementChild.textContent;
+// if(title.toLowerCase().indexOf(term) != -1){
+//   book.style.display = 'block';
+// }
+// else {
+//   book.style.display = 'none'
+// }
+//   })
+// })
 
 // function getTypesList() {
 //   var typesList = []

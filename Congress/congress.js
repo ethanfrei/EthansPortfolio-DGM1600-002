@@ -22,6 +22,7 @@ document.body.insertBefore(mainHeader, main)
 const allButton = document.createElement('button')
 allButton.textContent = 'All Congress'
 allButton.addEventListener('click', () => {
+    removeChildren(senatorDiv)
     populateDOM(simplifiedMembers ()) 
 })
 
@@ -31,6 +32,7 @@ const senatorsButton = document.createElement('button')
 senatorsButton.textContent = 'Republican'
 
 senatorsButton.addEventListener('click', () => {
+    removeChildren(senatorDiv)
     populateDOM(filterSimplifiedMembers (simplifiedMembers (), "R"))
 })
 
@@ -39,6 +41,7 @@ mainHeader.appendChild(senatorsButton)
 const democratsButton = document.createElement('button')
 democratsButton.textContent = 'Democrats'
 democratsButton.addEventListener('click', () => {
+    removeChildren(senatorDiv)
     populateDOM(filterSimplifiedMembers (simplifiedMembers (), "D"))
     console.log("click")
 })

@@ -3,6 +3,36 @@
     box-sizing: border-box;
 }
 
+.nav-list {
+    display: flex;
+    justify-content: center;
+    
+    
+  }
+
+  
+  
+  
+  .nav-list {
+      list-style-type: none;
+  }
+  .nav-list a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem;
+    font-size: xx-large;
+    font-family: garamond;
+    
+    
+    
+  }
+  
+  .nav-list a:hover {
+      color: #99241F;
+  }
+
+
 
 
 header {
@@ -16,6 +46,7 @@ header {
 
 header img {
     width: 800px;
+    margin: 3rem;
 }
 
 
@@ -23,6 +54,13 @@ header img {
 button {
     font-size: xx-large;
     background-color: #99241F;
+    margin: 2rem;
+    font-family: garamond;
+    padding: .5rem
+}
+
+body {
+    color: black;
 }
 
 .Senators {
@@ -42,8 +80,8 @@ figure {
 }
 figcaption {
     text-align: center;
-    color: white;
-    background-color: black;
+    color: black;
+    
 }
 figure img {
     
@@ -51,11 +89,7 @@ figure img {
     border-color: #99241F;
 }
 
-html {
-background-image: url('/images/flag.jpg');
-background-repeat: repeat;
-background-size: contain;
-}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */

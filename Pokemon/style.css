@@ -58,6 +58,10 @@ img {
 }
 
 
+
+
+
+
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
@@ -72,7 +76,7 @@ img {
     height: 260px;
     margin: .5rem;
     
-    perspective:
+    perspective:none;
     
 }
 
@@ -110,7 +114,8 @@ img {
 
 figure img {
     width: 200px;
-    
+    border-radius: 10px;
+    border-color: blue;
 }
 
 figcaption {
