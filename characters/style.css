@@ -37,7 +37,7 @@
 
   div img {
     max-width: 25%;
-    margin: 3rem;
+    padding-top: 3rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -55,6 +55,7 @@ button {
     font-size: x-large;
     background-color: gold;
     border-radius: 10px;
+    font-family: Star Wars;
 
 }
 
@@ -67,7 +68,9 @@ main {
     justify-content: center;
     flex-wrap: wrap;
     margin: 8px;
+    
 }
+
 figure img {
     width: 150px;
     margin: .75rem;
@@ -93,10 +96,15 @@ figcaption {
 }
 
 body {
-    background-color: white;
+    background-color: black;
     background-repeat: repeat;
     background-image: url("/images/stars.jpg");
     
+    
+  }
+
+  html {
+      min-height: 100%;
   }
   
 /* .modal {

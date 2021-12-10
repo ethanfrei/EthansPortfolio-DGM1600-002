@@ -21,6 +21,11 @@ document.body.insertBefore(mainHeader, main)
 
 
 
+// const searchButton = document.createElement('.button')
+// searchButton.textContent = 'Search Character'
+// // searchButton.addEventListener('click', () => )
+// mainHeader.appendChild(searchButton)
+
 
 const allButton = document.createElement('button')
 allButton.textContent = 'All Characters'

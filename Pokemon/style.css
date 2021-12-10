@@ -22,7 +22,7 @@
   .nav-list a {
     display: block;
     text-decoration: none;
-    color: #3B5EA8;
+    color: #FFCC04;
     padding: 1.5rem;
     font-size: xx-large;
     font-family: Pokemon;
@@ -32,7 +32,7 @@
   }
   
   .nav-list a:hover {
-      color: #FFCC04;
+      color: #00008b;
   }
 
   button {
@@ -40,6 +40,8 @@
       font-family: Pokemon;
       margin: 1rem;
       padding: .5rem;
+      border-radius: 10px;
+      border-color: #3B5EA8;
       
   }
 
@@ -88,6 +90,7 @@ img {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    
 }
 
 .cardFace {
@@ -95,6 +98,8 @@ img {
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    border: solid;
+    border-radius: 20px;
     
     
 }
@@ -108,21 +113,53 @@ img {
 }
 
 .back {
-    background: blue;
+    background: #e2e4a3;
     transform: rotateY(180deg);
 }
 
 figure img {
-    width: 200px;
+    width: 190px;
     border-radius: 10px;
-    border-color: blue;
+    border-color: #3B5EA8;
 }
 
 figcaption {
     text-transform: capitalize;
     
     font-size: 130%;
-    
+    color: #3B5EA8;
     text-align: center;
     font-family: Pokemon;
+}
+
+h4 {
+    color: #3B5EA8;
+    text-align: center;
+    padding-top: 1rem;
+    font-family: Pokemon;
+    letter-spacing: 3px;
+}
+h5 {
+    color: #3B5EA8;
+    text-align: center;
+    padding-top:5px;
+    font-family: Pokemon;
+    letter-spacing: 3px;
+}
+
+li {
+    color:#3B5EA8;
+    font-family: Pokemon;
+    letter-spacing: 3px;
+    padding-top:5px;
+    list-style: none;
+}
+body {
+    background: linear-gradient(#3B5EA8, white) no-repeat;
+    
+    
+}
+
+footer {
+    color: white;
 }

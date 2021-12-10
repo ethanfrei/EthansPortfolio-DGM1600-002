@@ -34,6 +34,25 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
   });
 }
 
+
+
+// const searchBar = document.getElementById('search-pokemon')
+// let singlePokemon = [];
+
+
+// searchBar.addEventListener('keyup', (e) => {
+// const searchString = e.target.value
+// const searchPokemon = singlePokemon.filter( Pokemon => {
+//   return (
+//     pokeCard.name.includes(searchString)
+// )
+// })
+
+console.log("filteredPokemon")
+
+
+
+
 loadPokemon(1, 50)
 
 const pokeGrid = document.querySelector(".pokeGrid");
@@ -42,51 +61,51 @@ const pokeGrid = document.querySelector(".pokeGrid");
 const fireButton = document.querySelector('.Fire')
 fireButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "fire")
+  loadPokemon(1, 50, "fire")
 })
 
 
 const waterButton = document.querySelector('.Water')
 waterButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "water")
+  loadPokemon(1, 50, "water")
 })
 
 const grassButton = document.querySelector('.Grass')
 grassButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "grass")
+  loadPokemon(1, 50, "grass")
 
 })
 const normalButton = document.querySelector('.Normal')
 normalButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "normal")
+  loadPokemon(1, 50, "normal")
 
 })
 const electricButton = document.querySelector('.Electric')
 electricButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "electric")
+  loadPokemon(1, 50, "electric")
 
 })
 const bugButton = document.querySelector('.Bug')
 bugButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "bug")
+  loadPokemon(1, 50, "bug")
 
 })
 
 const psychicButton = document.querySelector('.Psychic')
 psychicButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "psychic")
+  loadPokemon(1, 100, "psychic")
   
 })
 const flyingButton = document.querySelector('.Flying')
 flyingButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "flying")
+  loadPokemon(1, 50, "flying")
   
 })
 
@@ -99,11 +118,11 @@ poisonButton.addEventListener('click', () => {
 
 
 
-const loadButton = document.querySelector(".loadPokemon");
-loadButton.addEventListener("click", () => {
-  removeChildren(pokeGrid);
-  loadPokemon(1, 300);
-});
+// const loadButton = document.querySelector(".loadPokemon");
+// loadButton.addEventListener("click", () => {
+//   removeChildren(pokeGrid);
+//   loadPokemon(1, 300);
+// });
 
 // const searchBar = document.forms['search-pokemon'].querySelector('input');
 // searchBar.addEventListener('keyup', function(e){
@@ -120,20 +139,7 @@ loadButton.addEventListener("click", () => {
 //   })
 // })
 
-// function getTypesList() {
-//   var typesList = []
-//   for(var i= 0; i < pokemon.length; j++) {
-//     for(var j = 0; j < pokemon[i].types.length; j++){
-//       var type = pokemon[i].types[j]
-//       if(typesList.indexOf(type) === -1) {
-//         typesList.push(type)
-//       }
-//     }
-//   }
-//   typesList.sort()
-//   return typesList
-// }
-// console.log(getTypesList )
+
 
 
 
@@ -142,34 +148,6 @@ loadButton.addEventListener("click", () => {
 //    return filteredArray
 //  }
 //  console.log(filterPokeType (getTypesArray (), "electric"))
-
-
-
-// const allPokemon = []
-
-// const fireButton = document.querySelector('.Fire')
-// fireButton.addEventListener('click', () =>{
-//   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0`)
-//   .then(async (data) => {
-//     for (const pokemon of data.results) {
-//       await getAPIData(pokemon.url).then((pokeData) => {
-//         const mappedPokemon =  {
-// abilities: pokeData.abilities,
-// height: pokeData.height,
-// id: pokeData.id,
-// name: pokeData.name,
-// types: pokeData.types,
-// weight: pokeData.wdight
-//         }
-//         allPokemon.push(mappedPokemon)
-//       })
-//     }
-//     console.log(allPokemon)
-
-//   })
-// })
-
-
 
 const moreButton = document.querySelector(".morePokemon");
 moreButton.addEventListener("click", () => {
@@ -221,7 +199,7 @@ function getTypesArray(spacedString) {
 }
 
 class Pokemon {
-  constructor(name, height, weight, abilities, types) {
+  constructor(name, height, weight, abilities, types ) {
     (this.id = 100),
       (this.name = name),
       (this.height = height),
@@ -254,9 +232,15 @@ function populateCardFront(pokemon) {
   pokeFront.className = 'cardFace front'
 
   const pokeImg = document.createElement("img")
+  if (pokemon.id === 100) {
+    pokeImg.src = '../images/pokeball.png'
+  } 
+  else {
+    
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
-
+}
   const pokeCaption = document.createElement("figcaption")
+
   pokeCaption.textContent = pokemon.name
   pokeFront.appendChild(pokeImg)
   pokeFront.appendChild(pokeCaption)
@@ -284,43 +268,43 @@ function getPokeTypeColor(pokeType) {
   let color;
   switch (pokeType) {
     case "grass":
-      color = "#00ff00";
+      color = "#a2d4a7";
       break;
 
     case "fire":
-      color = "#ff0000";
+      color = "#f4ac90";
       break;
 
     case "water":
-      color = "#0000ff";
+      color = "#acbdb8";
       break;
 
     case "bug":
-      color = "#7fff00";
+      color = "#c6e4cd";
       break;
 
     case "normal":
-      color = "#f5f5dc";
+      color = "#caa779";
       break;
 
     case "flying":
-      color = "#00ffff";
+      color = "#d0eae0";
       break;
 
     case "poison":
-      color = "#c300f";
+      color = "#a99eb4";
       break;
 
     case "electric":
-      color = "#c8ff00";
+      color = "#fbf4a4";
       break;
 
       case "psychic":
-      color = "#333333";
+      color = "#cbb6d8";
       break;
 
     default:
-      color = "#888888";
+      color = "#f5f2d0";
   }
   return color
 }
@@ -337,13 +321,31 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
   });
-const typesList = document.createElement('ol')
+  
+  
+const typesList = document.createElement('h4')
 pokemon.types.forEach((pokeType) => {
   let typesItem = document.createElement('li')
   typesItem.textContent = pokeType.type.name
   typesList.appendChild(typesItem)
 })
   pokeBack.appendChild(abilityList);
-  pokeBack.appendChild(typesList)
+  pokeBack.appendChild(typesList);
+
+  if(pokemon.stats) {
+  const pokeHP = document.createElement('h4')
+  pokeHP.textContent = `HP: ${pokemon.stats[0].base_stat}`
+  pokeBack.appendChild(pokeHP);
+  }
+  const pokeHeight = document.createElement('h5')
+  pokeHeight.textContent = `Height: ${pokemon.height}`
+
+  const pokeWeight = document.createElement('h5')
+  pokeWeight.textContent = `Weight: ${pokemon.weight}`
+  
+  
+  
+  pokeBack.appendChild(pokeWeight);
+  pokeBack.appendChild(pokeHeight)
   return pokeBack;
 }
