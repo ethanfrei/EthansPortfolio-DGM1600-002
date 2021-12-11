@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "style.css" rel="stylesheet">
     <title>Pokemon!</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("audio_mp3").play();
+        }
+    </script>
 </head>
 <img src="/images/pokelogo.png">
 <body>
@@ -38,17 +43,61 @@
     <header>
         
     <!-- <button Class="loadPokemon"> Load Pokemon </button> -->
-    <button Class="newPokemon"> New Pokemon </button>
-    <button Class="morePokemon"> Load more Pokemon </button>
-    <button Class="Fire"> Fire Type </button>
-    <button Class="Water"> Water Type </button>
-    <button Class="Grass"> Grass Type </button>
-    <button Class="Normal"> Normal Type </button>
-    <button Class="Flying"> Flying Type </button>
-    <button Class="Poison"> Poison Type </button>
-    <button Class="Electric"> Electric Type </button>
-    <button Class="Bug"> Bug Type </button>
-    <button Class="Psychic"> Psychic Type </button>
+    <button Class="newPokemon" onclick="audio.play();"> New Pokemon </button>
+        <script type="text/javascript">
+            const audio = new Audio();
+            audio.src = "../Audio/pokeball_pop.mp3";
+        </script>
+    <button Class="morePokemon" onclick="audio.play();"> Load more Pokemon </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Fire" onclick="audio.play();"> Fire Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Water" onclick="audio.play();"> Water Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Grass" onclick="audio.play();"> Grass Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Normal" onclick="audio.play();"> Normal Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Flying" onclick="audio.play();"> Flying Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Poison" onclick="audio.play();"> Poison Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Electric" onclick="audio.play();"> Electric Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Bug" onclick="audio.play();"> Bug Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
+    <button Class="Psychic" onclick="audio.play();"> Psychic Type </button>
+    <script type="text/javascript">
+        const audio = new Audio();
+        audio.src = "../Audio/pokeball_pop.mp3";
+    </script>
      <!-- <form id="search-pokemon">
         <input type="text" placeholder="Search Pokemon">
     </form>  -->
@@ -56,6 +105,10 @@
     <main>
         <div class="pokeGrid"></div>
     </main>
+
+    <div>
+        <audio id="audio_mp3" src="../Audio/pokemon_episode_name.mp3" ></audio>
+    </div>
 <footer></footer>
 <script src="pokecode.js" type="module"></script>
 </body>

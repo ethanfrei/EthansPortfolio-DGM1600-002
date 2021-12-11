@@ -62,6 +62,7 @@ const fireButton = document.querySelector('.Fire')
 fireButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   loadPokemon(1, 50, "fire")
+  
 })
 
 

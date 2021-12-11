@@ -1,6 +1,11 @@
 import { people } from '../Data/people.js'
 import { getLastNumber, removeChildren } from '../utils/index.js'
 
+// audioObj = new Audio(`https://www.youtube.com/watch?v=7n7Gg7gPG3I`);
+// myAudioElement.addEventListener("canplaythrough". event => {
+//     myAudioElement.play()
+// })
+
 const main = document.querySelector('#main')
 
 const mainHeader = document.createElement('header')
