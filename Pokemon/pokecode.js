@@ -100,7 +100,7 @@ flyingButton.addEventListener('click', () => {
 const poisonButton = document.querySelector('.Poison')
 poisonButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 300, "poison")
+  loadPokemon(1, 25, "poison")
   
 })
 
