@@ -33,8 +33,15 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
     }
   });
 }
-
-
+// let pokeGrid = [];
+// document.getElementById('searchBar');
+// console.log("searchBar")
+// searchBar.addEventListener('keyup', (e) => {
+// const searchString = e.target.value;
+// pokeGrid.filter( pokemon => {
+//     return pokemon.name.includes(searchString)
+// })
+// })
 
 
 
