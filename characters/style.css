@@ -112,3 +112,8 @@ body {
     overflow: auto;
 } */
 
+.modal img {
+    width: 500px;
+}
+
+

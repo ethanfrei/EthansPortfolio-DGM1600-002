@@ -12,7 +12,7 @@ const mainHeader = document.createElement('header')
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const modalBackground = document.querySelector('.modal-background')
-const modalContent = document.querySelector('#Image')
+const modalContent = document.querySelector('#image')
 
 closeButton.addEventListener('click', () => {
     modal.classList.toggle('is-active')
@@ -30,6 +30,8 @@ document.body.insertBefore(mainHeader, main)
 // searchButton.textContent = 'Search Character'
 // // searchButton.addEventListener('click', () => )
 // mainHeader.appendChild(searchButton)
+
+
 
 
 const allButton = document.createElement('button')

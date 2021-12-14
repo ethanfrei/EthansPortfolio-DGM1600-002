@@ -36,20 +36,6 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
 
 
 
-// const searchBar = document.getElementById('search-pokemon')
-// let singlePokemon = [];
-
-
-// searchBar.addEventListener('keyup', (e) => {
-// const searchString = e.target.value
-// const searchPokemon = singlePokemon.filter( Pokemon => {
-//   return (
-//     pokeCard.name.includes(searchString)
-// )
-// })
-
-console.log("filteredPokemon")
-
 
 
 
@@ -63,6 +49,7 @@ fireButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
   loadPokemon(1, 50, "fire")
   
+
 })
 
 
@@ -119,36 +106,13 @@ poisonButton.addEventListener('click', () => {
 
 
 
-// const loadButton = document.querySelector(".loadPokemon");
-// loadButton.addEventListener("click", () => {
-//   removeChildren(pokeGrid);
-//   loadPokemon(1, 300);
-// });
+ const loadButton = document.querySelector(".loadPokemon");
+ loadButton.addEventListener("click", () => {
+   removeChildren(pokeGrid);
+   loadPokemon(1, 50);
+ });
 
-// const searchBar = document.forms['search-pokemon'].querySelector('input');
-// searchBar.addEventListener('keyup', function(e){
-//   const term = e.target.value.toLowerCase();
-//   const books = pokeGrid.getElementsByTagName('li');
-//   Array.from(books).forEach(function(book){
-// const title = book.firstElementChild.textContent;
-// if(title.toLowerCase().indexOf(term) != -1){
-//   book.style.display = 'block';
-// }
-// else {
-//   book.style.display = 'none'
-// }
-//   })
-// })
-
-
-
-
-
-//  function filterPokeType (singlePokemon, pokeFilter) {
-//    const filteredArray = singlePokemon.filter(pokemon => pokemon.type === pokeFilter)
-//    return filteredArray
-//  }
-//  console.log(filterPokeType (getTypesArray (), "electric"))
+ 
 
 const moreButton = document.querySelector(".morePokemon");
 moreButton.addEventListener("click", () => {
@@ -347,6 +311,6 @@ pokemon.types.forEach((pokeType) => {
   
   
   pokeBack.appendChild(pokeWeight);
-  pokeBack.appendChild(pokeHeight)
-  return pokeBack;
+  pokeBack.appendChild(pokeHeight);
+  return pokeBack
 }
