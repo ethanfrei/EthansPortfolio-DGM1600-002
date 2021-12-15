@@ -1,8 +1,19 @@
 import { removeChildren } from "../utils/index.js";
 
+const pokeCache = {}
+
+
 function getAPIData(url) {
+  if (url in pokeCache) {
+    return Promise.resolve(pokeCache[url])
+  }
   try {
-    return fetch(url).then((data) => data.json());
+    return fetch(url).then(async (data) => {
+      const json = await data.json ()
+      pokeCache[url] = json
+      return json
+    });
+    
   } catch (error) {
     console.error(error);
   }
@@ -14,7 +25,7 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
   ).then(async (data) => {
     console.log(data);
     for (const pokemon of data.results) {
-      await getAPIData(pokemon.url).then((pokeData) => {
+       getAPIData(pokemon.url).then((pokeData) => {
         if(filterType ===  undefined) {
           populatePokeCard(pokeData)
         }
@@ -33,20 +44,40 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
     }
   });
 }
-// let pokeGrid = [];
-// document.getElementById('searchBar');
-// console.log("searchBar")
-// searchBar.addEventListener('keyup', (e) => {
-// const searchString = e.target.value;
-// pokeGrid.filter( pokemon => {
-//     return pokemon.name.includes(searchString)
-// })
-// })
 
 
 
+//  let pokeGrid = [];
+  
+  const form = document.getElementById('searchBar')
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const input = form.querySelector('#searchInput')
+    const pokeSearch = new RegExp(input.value.toLowerCase())
 
-loadPokemon(1, 50)
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=-1`).then(data => {
+      const matches = data.results.filter(pokemon => pokeSearch.test(pokemon.name))
+      removeChildren(pokeGrid)
+      matches.forEach(match => {
+        getAPIData(match.url).then(populatePokeCard)
+      })
+      
+    })
+  })
+
+
+//  console.log("searchBar")
+//  searchBar.addEventListener('keyup', (e) => {
+//  const searchString = e.target.value;
+//  pokeGrid.filter( pokemon => {
+//      return pokemon.name.includes(searchString)
+//  })
+//  })
+
+
+getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=-1`).then()
+
+loadPokemon(0, 151)
 
 const pokeGrid = document.querySelector(".pokeGrid");
 
@@ -204,13 +235,14 @@ function populateCardFront(pokemon) {
   pokeFront.className = 'cardFace front'
 
   const pokeImg = document.createElement("img")
-  if (pokemon.id === 100) {
+  if (pokemon.id === 100 || pokemon.id === 10085) {
     pokeImg.src = '../images/pokeball.png'
   } 
   else {
     
   pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`
 }
+ 
   const pokeCaption = document.createElement("figcaption")
 
   pokeCaption.textContent = pokemon.name
