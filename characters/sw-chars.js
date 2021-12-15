@@ -1,10 +1,6 @@
 import { people } from '../Data/people.js'
 import { getLastNumber, removeChildren } from '../utils/index.js'
 
-// audioObj = new Audio(`https://www.youtube.com/watch?v=7n7Gg7gPG3I`);
-// myAudioElement.addEventListener("canplaythrough". event => {
-//     myAudioElement.play()
-// })
 
 const main = document.querySelector('#main')
 
@@ -69,6 +65,11 @@ if (
     return person
 }
 })
+
+//  const searchButton = document.createElement('button')
+//  searchButton.textContent = 'Search Characters'
+//  searchButton.addEventListener('click', () => populateDOM(characters))
+//  mainHeader.appendChild(searchButton)
 
 function populateDOM(characters) {
 

@@ -51,6 +51,12 @@ header  {
     
 }
 
+#searchBar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 button {
     font-size: x-large;
     background-color: gold;
