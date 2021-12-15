@@ -77,7 +77,7 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
 
 getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=-1`).then()
 
-loadPokemon(0, 151)
+loadPokemon(0, 99)
 
 const pokeGrid = document.querySelector(".pokeGrid");
 
@@ -85,7 +85,7 @@ const pokeGrid = document.querySelector(".pokeGrid");
 const fireButton = document.querySelector('.Fire')
 fireButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "fire")
+  loadPokemon(1, 100, "fire")
   
 
 })
@@ -94,31 +94,31 @@ fireButton.addEventListener('click', () => {
 const waterButton = document.querySelector('.Water')
 waterButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "water")
+  loadPokemon(1, 100, "water")
 })
 
 const grassButton = document.querySelector('.Grass')
 grassButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "grass")
+  loadPokemon(1, 100, "grass")
 
 })
 const normalButton = document.querySelector('.Normal')
 normalButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "normal")
+  loadPokemon(1, 100, "normal")
 
 })
 const electricButton = document.querySelector('.Electric')
 electricButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "electric")
+  loadPokemon(1, 100, "electric")
 
 })
 const bugButton = document.querySelector('.Bug')
 bugButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "bug")
+  loadPokemon(1, 100, "bug")
 
 })
 
@@ -131,14 +131,14 @@ psychicButton.addEventListener('click', () => {
 const flyingButton = document.querySelector('.Flying')
 flyingButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 50, "flying")
+  loadPokemon(1, 100, "flying")
   
 })
 
 const poisonButton = document.querySelector('.Poison')
 poisonButton.addEventListener('click', () => {
   removeChildren(pokeGrid)
-  loadPokemon(1, 25, "poison")
+  loadPokemon(1, 100, "poison")
   
 })
 
@@ -147,7 +147,7 @@ poisonButton.addEventListener('click', () => {
  const loadButton = document.querySelector(".loadPokemon");
  loadButton.addEventListener("click", () => {
    removeChildren(pokeGrid);
-   loadPokemon(1, 50);
+   loadPokemon(1, 100);
  });
 
  
