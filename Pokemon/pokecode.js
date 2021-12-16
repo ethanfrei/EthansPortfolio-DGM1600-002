@@ -18,6 +18,7 @@ function getAPIData(url) {
     console.error(error);
   }
 }
+//above I added a cache so the browser will remember which pokemon have been loaded so the pokemon will load quicker
 
 function loadPokemon(offset = 0, limit = 25, filterType) {
   getAPIData(
@@ -45,9 +46,9 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
   });
 }
 
+//I updated the loadPokemon function from await so they load even quicker. I also added else to filter out pokeTypes filtered with the buttons
 
 
-//  let pokeGrid = [];
   
   const form = document.getElementById('searchBar')
   form.addEventListener('submit', (e) => {
@@ -65,14 +66,8 @@ function loadPokemon(offset = 0, limit = 25, filterType) {
     })
   })
 
+//I used a Regular Expression which holds a pattern to test the strings that are input to the searchbar.
 
-//  console.log("searchBar")
-//  searchBar.addEventListener('keyup', (e) => {
-//  const searchString = e.target.value;
-//  pokeGrid.filter( pokemon => {
-//      return pokemon.name.includes(searchString)
-//  })
-//  })
 
 
 getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=-1`).then()
