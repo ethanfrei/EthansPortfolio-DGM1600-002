@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link href="style.css" rel="stylesheet" />
     <title>Ships</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("audio_mp3").play();
+        }
+    </script>
 </head>
 
 
@@ -59,7 +64,9 @@
         <button class="modal-close is-large" aria-label="close"></button>
       </div>
 
-      
+      <div>
+        <audio id="audio_mp3" src="../Audio/fly-by-2.mp3" ></audio>
+    </div>
     <footer>
         <p>&copy; Ethan Frei 2021</p>
     </footer>
