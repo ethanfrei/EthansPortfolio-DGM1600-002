@@ -7,6 +7,8 @@ import { removeChildren } from '../utils/index.js'
 const members = [...senators, ...representatives] // combining arrays
 
 const senatorDiv = document.querySelector('.Senators')
+const seniorityHeading = document.querySelector('.seniority')
+const weaselOrderedList = document.querySelector('.weaselList')
 
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
@@ -138,29 +140,29 @@ modalBackground.addEventListener('click', () => modal.classList.toggle('is-activ
     return acc.seniority > senator.seniority ? acc : senator
 })
 
-
+seniorityHeading.textContent = `The most senior member of Congress is ${mostSeniorMember.name}`
 
 const mostLoyal = simplifiedMembers().reduce((acc, senator) => {
     if(senator.loyaltyPct === 100) {
-        acc.push(senator === 100)
+        acc.push(senator)
     }
     return acc
 }, [])
 
 
 
-// const biggestWeasel = simplifiedMembers().reduce((acc, senator) =>
-//  (acc.missedVotesPct || 0) > senator.missedVotesPct ? acc : senator.missedVotesPct, {})
+ const biggestWeasel = simplifiedMembers().reduce((acc, senator) =>
+  (acc.missedVotesPct || 0) > senator.missedVotesPct ? acc : senator, {})
 
-//  const biggestWeasels = simplifiedMembers().filter(senator => senator.missedVotesPct >= 50)
+  const biggestWeasels = simplifiedMembers().filter(senator => senator.missedVotesPct >= 50)
 
-//  console.log(biggestWeasels)
+  console.log(biggestWeasels)
 
-//  biggestWeasels.forEach(weasel => {
-//      let listItem = document.createElement('li')
-//      listItem.textContent = weasel.name
-//      weaselListOrderedList.appendChild(listItem)
-//  })
+  biggestWeasels.forEach(weasel => {
+      let listItem = document.createElement('li')
+      listItem.textContent = weasel.name
+      weaselListOrderedList.appendChild(listItem)
+  })
 
 //  closeButton.addEventListener('click', ()=> modal.classList.toggle('is-active'))
 // modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
