@@ -160,6 +160,42 @@ body {
     
 }
 
-footer {
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 320px;
+    background-color: #3B5EA8;
+    font-size: 2rem;
+  }
+  
+  #contact h1, h4 {
+    padding-bottom: 2rem;
     color: white;
-}
+  }
+  
+  #contact div {
+    display: flex;
+  
+  }
+  
+  
+  
+  #contact div a {
+    padding: 2rem;
+    font-size: 1.5rem;
+    color: #f2f1f2;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+  }
+  
+  #contact div a:hover {
+    transform: translateY(-8px)
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: x-large;
+  }
